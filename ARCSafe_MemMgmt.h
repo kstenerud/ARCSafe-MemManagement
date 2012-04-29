@@ -68,9 +68,9 @@
  *
  * - as_bridge: bridge between retainable and non-retainable types.
  *
- * - as_bridge_retain: bridge from non-retainable to retainable type.
+ * - as_bridge_retained: bridge from retainable to non-retainable type.
  *
- * - as_bridge_transfer: bridge from retainable to non-retainable type.
+ * - as_bridge_transfer: bridge from non-retainable to retainable type.
  *
  *
  * Autorelease Pools:
@@ -96,7 +96,7 @@
     #define as_autoreleasing         __autoreleasing
 
     #define as_bridge                __bridge
-    #define as_bridge_retain         __bridge_retain
+    #define as_bridge_retained       __bridge_retained
     #define as_bridge_transfer       __bridge_transfer
 
     #define as_autoreleasepool_start(NAME) @autoreleasepool {
@@ -119,7 +119,7 @@
     #define as_autoreleasing
 
     #define as_bridge
-    #define as_bridge_retain
+    #define as_bridge_retained
     #define as_bridge_transfer
 
     #define as_autoreleasepool_start(NAME) NSAutoreleasePool* NAME = [[NSAutoreleasePool alloc] init];
