@@ -13,3 +13,8 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+*.mergesave
+*.bak
+.~*
+.DS_Store
+
