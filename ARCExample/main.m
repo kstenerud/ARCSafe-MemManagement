@@ -6,12 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARCSafe_MemMgmt.h"
 
 #import "AppDelegate.h"
 
 int main(int argc, char *argv[])
 {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
+    as_autoreleasepool_start(pool);
+
+    return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    
+    as_autoreleasepool_end(pool);
 }

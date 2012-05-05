@@ -23,7 +23,7 @@ Features
 - Ownership management macros
 - Property and storage qualifiers
 - Bridging between retainable and non-retainable pointers
-- Autorelease pools
+- Autorelease pools (for GCC support)
 
 
 Usage
@@ -74,6 +74,9 @@ Usage
     *error = as_autorelease((as_bridge NSError*)errorRef);
 
 #### Autorelease Pools:
+Note: These are only needed if you want your code to be compilable under the GCC compiler.
+If you only plan to support CLANG, use @autoreleasepool.
+
     as_autoreleasepool_start(pool_a);
     
     ...
@@ -86,6 +89,9 @@ Full Example
 
 I've included a full example project in this repository.
 See **ViewController.h** and **ViewController.m** for details.
+
+You can test compatibility by turning "Objective-C Automatic Reference Counting" on/off
+in the build settings, and changing between "Apple LLVM Compiler" and "LLVM GCC".
 
 
 License

@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "ARCSafe_MemMgmt.h"
 
 @interface ViewController ()
 
@@ -58,7 +59,7 @@
 {
     [super viewDidLoad];
     
-    as_autoreleasepool_start(pool_a);
+    as_autoreleasepool_start(pool);
     
     // One minor annoyance is that the preprocessor gets confused by commas
     // in Objective-C code.
@@ -71,7 +72,7 @@
     // pool ends. in non-ARC mode, it will become a dangling pointer!
     self.weakProp = [NSString stringWithFormat:@"Test weak prop %d", 0];
     
-    as_autoreleasepool_end(pool_a);
+    as_autoreleasepool_end(pool);
 }
 
 - (void) viewDidAppear:(BOOL)animated

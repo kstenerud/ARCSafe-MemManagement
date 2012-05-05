@@ -6,13 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARCSafe_MemMgmt.h"
 
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (as_strongprop, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (as_strongprop, nonatomic) ViewController *viewController;
 
 @end

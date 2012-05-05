@@ -73,7 +73,7 @@
  * - as_bridge_transfer: bridge from non-retainable to retainable type.
  *
  *
- * Autorelease Pools:
+ * Autorelease Pools (Only needed for GCC support):
  *
  * - as_autoreleasepool_start(NAME): Start an autorelease pool.
  *
@@ -122,8 +122,13 @@
     #define as_bridge_retained
     #define as_bridge_transfer
 
+#ifdef __clang__
+    #define as_autoreleasepool_start(NAME) @autoreleasepool {
+    #define as_autoreleasepool_end(NAME)   }
+#else
     #define as_autoreleasepool_start(NAME) NSAutoreleasePool* NAME = [[NSAutoreleasePool alloc] init];
     #define as_autoreleasepool_end(NAME)   [NAME release];
+#endif
 
 #endif
 
